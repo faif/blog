@@ -1,0 +1,18 @@
+---
+layout: post
+title: 'BASH: syntax error near unexpected token `('''
+date: '2014-04-19T16:13:00.001+02:00'
+author: Sakis Kasampallis
+tags:
+- Bash
+- error
+- scripting
+- alias
+- shell
+- shellscript
+modified_time: '2014-05-05T15:31:15.053+02:00'
+blogger_id: tag:blogger.com,1999:blog-7146248794813174249.post-5287732353692474964
+blogger_orig_url: http://sakiskasampalis.blogspot.com/2014/04/bash-syntax-error-near-unexpected-token.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">After making some portability and readability improvements to <a href="https://github.com/faif/shell-utils"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">shell-utils</span></a>, I used BASH, sh, and dash to test it. While sh and dash were fine, BASH returned the error:<br /><br /><b>line 358: syntax error near unexpected token `('</b><br /><b>line 358: `ls ()'</b><br /><br />That is strange. BASH usually introduces shell portability issues because of the extra features it provides, so I would expect to have a problem with the other shells.<br /><br />It turns out that BASH did a pretty good job with reporting the source of the error. Note that <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">shell-utils</span> redefines a few everyday commands as functions, to make them more verbose and <strike>secure</strike> safe (eg. <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">ls</span> becomes <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">ls --color=auto</span>, <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">rm</span> becomes <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">rm -i</span>, etc.). But usually those everyday commands are already defined as aliases in .bashrc. Aliases are evaluated before functions, and defining a function that has the same name as an alias is not allowed. And that's what BASH is trying to tell me in the error message. Commenting all aliases in .bashrc fixed the issue :)<br /><br /></div>

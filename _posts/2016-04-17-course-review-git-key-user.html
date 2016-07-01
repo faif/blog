@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'Course review: Git key user'
+date: '2016-04-17T21:23:00.003+02:00'
+author: Sakis Kasampallis
+tags:
+- course
+- review
+- git
+modified_time: '2016-04-17T21:28:04.568+02:00'
+blogger_id: tag:blogger.com,1999:blog-7146248794813174249.post-4918800618663414080
+blogger_orig_url: http://sakiskasampalis.blogspot.com/2016/04/course-review-git-key-user.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">Last month I followed a course about Git. The name of the course was "Git key user" and it was organized by <a href="http://tmcporch.com/">TMC</a>.<br /><br />Obviously Git is a tool that you learn by doing, and indeed the lesson of the day was the following: "Do not afraid to experiment".<br /><br />In general Git behaves as a <a href="http://www.jayway.com/2013/03/03/git-is-a-purely-functional-data-structure/">purely functional data structure</a>&nbsp;(or a copy-on-write filesystem)&nbsp;in the sense that it never overwrites or directly removes data. All orphan nodes are kept for two weeks (I assume that this is configurable) and only if you don't touch them for that period of time they will be cleaned by Git's garbage collector.<br /><br />During the course we have learnt how to use:<br /><br /><ul style="text-align: left;"><li><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git commit --amend</span> to make changes related to the most recent commit. Examples include writing a better commit message or removing a file that is not required. The same actions can be applied &nbsp;to any past commit using a combination of <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git rebase -i</span> and <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git commit --amend</span>.</li><li><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git cherry-pick</span> to apply specific changes from one or more branches to a destination branch. This is useful when for instance a required feature was developed to an incorrect branch.</li><li><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git checkout</span> combined with <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git stash</span> to clean up a messed up repository.</li><li><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git rebase -i</span> with the options s(quash) and p(ick) to group/restructure related commits and create a better/cleaner commit history.</li><li><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">git bisect</span> to go back to a good version of a branch. That's necessary after finding out (too late) that the current branch is broken but you are not sure when the bug that broke the code was introduced.</li></ul><div>Overall, it was nice to see some concrete use cases of the commands because Git has so many features that it's not hard to get lost...</div><br /><br /></div>

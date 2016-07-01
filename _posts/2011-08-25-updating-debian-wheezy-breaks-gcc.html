@@ -1,0 +1,18 @@
+---
+layout: post
+title: Updating Debian Wheezy breaks GCC
+date: '2011-08-25T13:30:00.000+02:00'
+author: Sakis Kasampallis
+tags:
+- Debian
+- GNU/Linux
+- gcc
+- fix
+- bug
+- wheezy
+modified_time: '2012-05-25T21:30:51.725+02:00'
+blogger_id: tag:blogger.com,1999:blog-7146248794813174249.post-1897948757585514685
+blogger_orig_url: http://sakiskasampalis.blogspot.com/2011/06/updating-debian-wheezy-breaks-gcc.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on"><h4 class="documentDescription" style="text-align: left;">                        <span class=" kssattr-atfieldname-description kssattr-templateId-widgets/textarea kssattr-macro-textarea-field-view inlineEditable" id="parent-fieldname-description">            Quick hack to fix it</span></h4>The latest update of Debian testing (aka Wheezy) breaks GCC, both version 4.x and 5.x:<br /><pre>#include &lt;stdio.h&gt;<br /><br />int<br />main (void)<br />{&nbsp; <br />   return 0;<br />}<br /><br />faif@isengard:~$ gcc --version<br />gcc (Debian 4.5.3-3) 4.5.3<br />faif@isengard:~$ gcc -o a a.c<br />/usr/bin/ld: cannot find -lgcc_s<br />collect2: ld returned 1 exit status</pre><pre>&nbsp;</pre>Well, the thing is that the "missing" library is already installed:<br /><pre>faif@isengard:~$ find / -name '*libgcc*' 2&gt;/dev/null<br />/lib/libgcc_s.so.1</pre><br />So, <a class="external-link" href="http://www.debian.org/doc/FAQ/ch-software.en.html">why (see 5.6)</a> is this happening? Well, that's because someone forgot to add the  relevant symbolic link. Thus a quick hack to fix the problem is:<br /><pre>faif@isengard:~$ sudo ln -s /lib/libgcc_s.so.1 /lib/libgcc_s.so<br />faif@isengard:~$ gcc -o a a.c &amp;&amp; echo voila!<br />voila!<br />faif@isengard:~$</pre><br /><div class="documentDescription"></div></div>

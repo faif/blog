@@ -1,0 +1,19 @@
+---
+layout: post
+title: Python code profiling in Debian
+date: '2011-05-08T21:30:00.000+02:00'
+author: Sakis Kasampallis
+tags:
+- Debian
+- GNU/Linux
+- programming
+- python
+- module
+- profiling
+- timeit
+modified_time: '2012-05-27T17:00:51.169+02:00'
+blogger_id: tag:blogger.com,1999:blog-7146248794813174249.post-6786949704638611541
+blogger_orig_url: http://sakiskasampalis.blogspot.com/2012/05/python-code-profiling-in-debian.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">If you are coding in python, you are probably already familiar with  the profiler concept. The problem is that the python profiler license  fails to comply with the free software guidelines of Debian and  therefore the package belongs to the non-free archive. "So what?", you  might say. Well, personally I don't like to use software which belongs  to the non-free archive both for philosophical and technical reasons. An  important technical reason for instance is that Debian does not provide  security updates for the non-free packages.<br /><br />The next question is  are there any alternative solutions? Thankfully the answer is yes.  Since python 2.3 we can use the timeit module to test the efficiency of our code. Let me demonstrate the module using a simple example, taken  from Downey's "Think Python" book (exception handling and the like are  omitted for simplicity).<br /><br /><script src="https://gist.github.com/1561608.js?file=fibo-timeit.py"></script> <br />What we want to see here is how much more efficient is the  recursive version of Fibonacci which uses a dictionary as a memo. Let's  first see the result of the given code snippet (no memo version):<br /><pre>python3 fibo-timeit.py<br />113.601776838</pre><pre>&nbsp;</pre>Wow! It took almost 114 seconds the profiler to complete the test... Let's change the code to use the memo-based function:<br /><pre>t = Timer('fibonacci_ef(9)', 'from __main__ import fibonacci_ef')</pre><pre>&nbsp;</pre>So let's find out if memoization does indeed worth trying:<br /><pre>python3 fibo-timeit.py<br />1.40260386467</pre><pre>&nbsp;</pre>Hmmm.... Not bad. Happy Coding :)</div>

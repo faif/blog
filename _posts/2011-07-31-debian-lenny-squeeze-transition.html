@@ -1,0 +1,18 @@
+---
+layout: post
+title: Debian Lenny -> Squeeze transition
+date: '2011-07-31T00:30:00.000+02:00'
+author: Sakis Kasampallis
+tags:
+- Debian
+- GNU/Linux
+- Lenny
+- upgrade
+- operating system
+- Squeeze
+modified_time: '2012-05-25T21:44:38.258+02:00'
+blogger_id: tag:blogger.com,1999:blog-7146248794813174249.post-1612079298644148775
+blogger_orig_url: http://sakiskasampalis.blogspot.com/2011/05/debian-lenny-squeeze-transition.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">After more than a year of using Debian GNU/Linux stable (Lenny) on my eee, I decided to upgrade it to testing (Squeeze). The reasons are  many. Some of them, are the access to updated versions of many  applications, and the usage of a recent optimized kernel. Anyway, my  system is fine except from a (pretty annoying) bug with gnome-panel when minimizing applications (they are gone instead of iconified), which  seems to be a known issue but I still have not found a good solution<sup>[1]</sup><br /><br /><div class="callout" style="background-color: white; color: black;">[1] The problem was solved by simply reinstalling GNOME :)</div><div class="callout"><br /></div>If you are planning to do the same, the following advices might be helpful:<br /><ul><li>Make sure that you have enough space on all partitions. In my  case, during the installation my root partition became full, which  terminated the process. An easy way to free space on the root partition  (I'm talking about using a separate root partition here) is to remove  outdated kernels and modules (if you don't use a separate boot  partition). Don't do this manually, use <code>aptitude search linux-image</code> and <code>aptitude purge</code> instead. Other than that, <code>du --human-readable --summarize [directories/files] | sort --reverse --numeric-sort</code> will be your friend :)</li><li>Be aware of the udev <a class="external-link" href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=571255">bug</a>. There is a lot of discussion on the Web, but the best solution I've found is on the Debian <a class="external-link" href="http://forums.debian.net/viewtopic.php?f=16&amp;t=48996">forum</a>.</li><li>Use <code>aptitude</code> instead of <code>apt-get</code>. The steps are very straightforward:</li><ul><li>Replace all the lines in <code>/etc/apt/sources.list</code> from  lenny to squeeze (or stable to testing, etc.) except from the security  repository. The reason is that security updates are provided faster for  the stable distribution, and it is fine to keep this line as is (no  conflicts).</li><li><code>sudo aptitude update</code></li><li><code>sudo aptitude install apt dpkg aptitude</code></li><li><code>sudo aptitude safe-upgrade</code>. Warning: This can last for some hours so get a book or go out for a coffee...</li><li>Reboot to make sure that the new kernel is used.</li><li><code>sudo aptitude full-upgrade</code>. Although not necessary, I advice you to switch into single user mode with <code>sudo telinit 1</code> before executing this step. </li></ul></ul><br />Have fun with Debian!</div>

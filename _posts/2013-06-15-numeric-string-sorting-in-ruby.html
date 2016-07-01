@@ -1,0 +1,17 @@
+---
+layout: post
+title: Numerical string sorting in Ruby
+date: '2013-06-15T03:43:00.001+02:00'
+author: Sakis Kasampallis
+tags:
+- numerical
+- ruby
+- programming
+- sorting
+- string
+modified_time: '2014-04-12T12:59:44.294+02:00'
+blogger_id: tag:blogger.com,1999:blog-7146248794813174249.post-1736745133898870989
+blogger_orig_url: http://sakiskasampalis.blogspot.com/2013/06/numeric-string-sorting-in-ruby.html
+---
+
+The problem: You have an unsorted array of strings (product codes, area codes, etc.) containing both letters and numbers (for example 'A28', 'A3', 'A1', etc.) and you want to sort them numerically (that is, 'A1', 'A2', ..., 'An'). Ruby offers a <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sort</span> method, so let's see what it does...<br /><br /><script src="https://gist.github.com/faif/5786178.js?file=sort.rb"></script> Nope, that's not what I want. But no worries, <a href="http://ruby-doc.org/core-1.8.6/Enumerable.html">enumerable</a> is here to help me. Enumerable is a great mixin inspired by functional programming. Functional programming relies heavily on data transformations: The input is a data structure, we transform the data of the structure by applying one or more functions, and the output is a new data structure. In this particular example the input is an unsorted array of strings, I want to apply a function that will change their order, and the output will be a new array with the strings sorted numerically.<br /><br />What is the data transformation in this case? A string is a data structure that can be treated as an array in most programming languages, and ruby is not an exception. Therefore the problem can be solved by using as a sorting key the numeric part of a string and treating that key as a number.<br /><br /><script src="https://gist.github.com/faif/5786178.js?file=sort_by.rb"></script> And we are done :)

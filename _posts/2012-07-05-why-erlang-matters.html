@@ -1,0 +1,17 @@
+---
+layout: post
+title: Why Erlang matters
+date: '2012-07-05T21:38:00.000+02:00'
+author: Sakis Kasampallis
+tags:
+- erlang
+- programming
+- paradigm
+- podcast
+- concurrency
+modified_time: '2012-07-05T21:38:26.128+02:00'
+blogger_id: tag:blogger.com,1999:blog-7146248794813174249.post-8274944198909432123
+blogger_orig_url: http://sakiskasampalis.blogspot.com/2012/07/why-erlang-matters.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">I usually go at work by bicycle and to spend my cycling time efficiently I listen to the podcasts of&nbsp; <a href="http://www.se-radio.net/">se-radio</a>. I have this idea of sharing my thoughts about the things being said in the podcasts but I'm not sure if it is going to work well. But anyway...<br /><br />Today's podcast was about <a href="http://www.se-radio.net/2008/03/episode-89-joe-armstrong-on-erlang/">Erlang</a>. Erlang is a functional language which started as a Prolog derivative focusing on solving fault tolerance problems in telecommunications systems. Compared to its initial version, Erlang has evolved a lot. The performance is much better, it uses a dedicated virtual machine, and offers a framework (OTP) for developing real-time fault tolerant systems.<br /><br />Erlang focuses on fault tolerance using lightweight processes that communicate with each other using message passing primitives. Each process is independent from the rest, like processes in operating systems. There is no shared memory or threads, so&nbsp; no need for deadlock detection/avoidance techniques, mutexes, conditional variables, and the like.<br /><br />Another notable feature is the "let it crash" philosophy. Since processes are independent, when a process crashes the rest remain unaffected. This gives the option of using special processes for monitoring the faulty processes. It's even possible to debug and replace faults in runtime.<br /><br />Now that single processors have reached their limits, Erlang is a great option for making efficient use of multi-core CPUs without messing with threads and hard to debug deadlocks.<br /><br />Obviously the Prolog-like syntax of Erlang is keeping some programmers away, but that's not a serious reason for not giving it a try.</div>

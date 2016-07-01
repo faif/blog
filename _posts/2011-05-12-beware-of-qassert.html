@@ -1,0 +1,17 @@
+---
+layout: post
+title: Beware of Q_ASSERT
+date: '2011-05-12T18:30:00.000+02:00'
+author: Sakis Kasampallis
+tags:
+- c++
+- Q_ASSERT
+- programming
+- QT
+- assertion
+modified_time: '2012-05-24T22:17:58.593+02:00'
+blogger_id: tag:blogger.com,1999:blog-7146248794813174249.post-7816482769777949947
+blogger_orig_url: http://sakiskasampalis.blogspot.com/2011/05/beware-of-qassert.html
+---
+
+<div dir="ltr" style="text-align: left;" trbidi="on">I really like the concept of inline assertions. Assertions might be  rude, since they kick you out of a program whenever they fail, but by  using them you can make sure that your code gives you the expected  results. You might argue that Unit Testing is a better approach. I won't  say no, but I believe that unit testing is slower to implement and not  necessary in all cases.<br /><br />Anyway this is not where I want to focus. If you are coding in QT, you might be aware of <code>Q_ASSERT</code>. Like other features (<code>QString</code>, <code>QFile</code>,  etc.), QT provides its own facility for writing code assertions. So  that's another replacement of a standard facility, right? Well, not  exactly... What I wasn't aware of, is that <code>Q_ASSERT</code>  statements are completely ignored when the application is executing in  release mode. They are only taken into account in debug mode. I was  using a statement like <code>Q_ASSERT(doThat())</code> in my code, which was causing a hard to track logical error (since <code>doThat()</code> was never executed in release mode). Luckily, after a couple of hours a colleague of mine discovered the bug.<br /><br />My mistake: I wrongly assumed that <code>Q_ASSERT</code> acts like the classic <code>assert</code>, which is only ignored in a C++/C program if a special macro (like <code>NDEBUG</code>) is defined. What I actually wanted was my assertions to be checked in both modes, which is done by using the standard <code>assert</code> facility.<br /><br />So are you using <code>Q_ASSERT</code>? That's fine. Just be aware that <code>Q_ASSERT</code> and <code>assert</code> behave differently.<br /><br />Happy coding.</div>
