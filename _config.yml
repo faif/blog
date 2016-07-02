@@ -11,8 +11,8 @@ email: ""
 description: > # this means to ignore newlines until "baseurl:"
   Occasionally writen posts about programming, free software,
   career advices, and fun.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "http://sakisk.me" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://blog.sakisk.me" # the base hostname & protocol for your site
 twitter_username: SKasampalis
 github_username:  faif
 paginate: 12
