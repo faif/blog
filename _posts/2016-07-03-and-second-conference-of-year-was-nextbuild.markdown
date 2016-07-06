@@ -2,6 +2,7 @@
 layout: post
 title:  "And the second conference of the year was... NextBuild"
 date:   2016-07-03 20:10:00 +0200
+categories: nextbuild conference 2016
 tags:
 - conference
 - nextbuild
