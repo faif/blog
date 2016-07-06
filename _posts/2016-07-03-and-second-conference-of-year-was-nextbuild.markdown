@@ -2,7 +2,11 @@
 layout: post
 title:  "And the second conference of the year was... NextBuild"
 date:   2016-07-03 20:10:00 +0200
-categories: nextbuild conference 2016
+tags:
+- conference
+- nextbuild
+- '2016'
+- eindhoven
 ---
 It's sad that there are no good programming conferences in the South of the Netherlands and especially around the Eindhoven
 area which is considered very innovative and has a strong university. Fortunately, [NextBuild][nextbuild] is an exception.
