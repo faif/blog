@@ -36,7 +36,7 @@ collections/data structures
 
 [reasoning]: http://www.lispcast.com/reasoning-about-code
 
-Of course we need to be careful about point 3, especially when we talk about parenteses in Lisp code 
+Of course we need to be careful about point 3, especially when we talk about parentheses in Lisp code
 
 ![parentheses in Lisp](http://imgs.xkcd.com/comics/lisp_cycles.png)
 
