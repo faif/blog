@@ -7,6 +7,7 @@ permalink: /favourite/
 Here you can find my favorite blog posts, magazine articles, etc. I'll try to keep the page up to date, but I'm not promising anything...
 
 # Programming
+* [9 Anti-Patterns Every Programmer Should Be Aware Of][antipatterns]
 * [A Dismal Guide to Concurrency][dismal]
 * [Advanced programming languages][advanced]
 * [Adventures of a Clint Eastwood Coder][clint]
@@ -21,7 +22,9 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 * [Good Code Tells the Truth][good]
 * [Grokking Pattern Matching and List Comprehensions][pattern]
 * [How Virtuous Is Your Code?][virtuous]
+* [Java is Pass-by-Value, Dammit!][java]
 * [Language Workbenches][workbench]
+* [Latency Numbers Every Programmer Should Know][latency]
 * [Low Level Bit Hacks You Absolutely Must Know][hacks]
 * [Much Ado About Nothing][ado]
 * [Nerds, we need to have a talk][nerds]
@@ -40,6 +43,7 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 * [Unfortunate Python][unfortunate]
 * [Unit Tests Are FIRST][first]
 
+[antipatterns]: http://sahandsaba.com/nine-anti-patterns-every-programmer-should-be-aware-of-with-examples.html
 [dismal]: http://www.facebook.com/notes/facebook-engineering/a-dismal-guide-to-concurrency/379717628919
 [advanced]: http://matt.might.net/articles/best-programming-languages/
 [clint]: http://pragprog.com/magazines/2010-01/swaines-world
@@ -54,7 +58,9 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 [good]: http://pragprog.com/magazines/2010-10/good-code-tells-the-truth
 [pattern]: http://pragprog.com/magazines/2011-01/grokking-pattern-matching-and-list-comprehensions
 [virtuous]: http://pragprog.com/magazines/2011-08/how-virtuous-is-your-code
+[java]: http://javadude.com/articles/passbyvalue.htm
 [workbench]: http://pragprog.com/magazines/2009-10/language-workbenches
+[latency]: https://gist.github.com/jboner/2841832
 [hacks]: http://www.catonmat.net/blog/low-level-bit-hacks-you-absolutely-must-know/
 [ado]: http://pragprog.com/magazines/2010-01/much-ado-about-nothing
 [nerds]: http://thingist.com/t/item/4372/
