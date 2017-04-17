@@ -1,7 +1,7 @@
 ---
 layout: page
-title: My favourite posts
-permalink: /favourite/
+title: My favorite posts
+permalink: /favorite/
 ---
 
 Here you can find my favorite blog posts, magazine articles, etc. I'll try to keep the page up to date, but I'm not promising anything...
