@@ -56,6 +56,7 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 [elevator]: http://www.lisazhang.ca/2009/12/elevator-algorithms.html
 [functional]: http://pragprog.com/magazines/2012-08/functional-thinking-for-the-imperative-mind
 [good]: http://pragprog.com/magazines/2010-10/good-code-tells-the-truth
+
 [pattern]: http://pragprog.com/magazines/2011-01/grokking-pattern-matching-and-list-comprehensions
 [virtuous]: http://pragprog.com/magazines/2011-08/how-virtuous-is-your-code
 [java]: http://javadude.com/articles/passbyvalue.htm
@@ -87,6 +88,8 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 * [How I came to find Linux][linux]
 * [My Lisp Experiences and the Development of GNU Emacs][emacs]
 * [Project MAC, the Internet, and Interactive Computing][mac]
+* [The idea of Lisp][idea]
+* [The History of the URL: Domain, Protocol, and Port][url]
 * [The Origins of the Blink Tag][blink]
 * [The Story of the PING Program][ping]
 * [The Wonderful World of Early Computing][early]
@@ -96,7 +99,9 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 [kildall]: http://pragprog.com/magazines/2012-11/threads
 [linux]: http://ianmurdock.com/post/how-i-came-to-find-linux/
 [emacs]: http://www.gnu.org/gnu/rms-lisp.html
+[idea]: https://dev.to/ericnormand/the-idea-of-lisp
 [mac]: http://pragprog.com/magazines/2010-07/when-did-that-happen
+[url]: https://eager.io/blog/the-history-of-the-url-domain-and-protocol/
 [blink]: http://www.montulli.org/theoriginofthe%3Cblink%3Etag
 [ping]: http://ftp.arl.mil/mike/ping.html
 [early]: http://www.neatorama.com/2008/01/25/the-wonderful-world-of-early-computing/
