@@ -179,6 +179,7 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 * [SSH: More than secure shell][ssh]
 * [SSH: Tips And Tricks You Need][ssh-tricks]
 * [Suffering-oriented programming][suffering]
+* [Techniques for Efficiently Learning Programming Languages][techniques]
 * [The 10 rules of a Zen programmer][zen]
 * [The absolute bare minimum every programmer should know about regular expressions][regex]
 * [The Full Stack, Part I][full-stack]
@@ -196,6 +197,7 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 [ssh]: http://matt.might.net/articles/ssh-hacks/
 [ssh-tricks]: http://www.symkat.com/ssh-tips-and-tricks-you-need
 [suffering]: http://nathanmarz.com/blog/suffering-oriented-programming.html
+[techniques]: http://www.flyingmachinestudios.com/programming/learn-programming-languages-efficiently/
 [zen]: http://www.grobmeier.de/the-10-rules-of-a-zen-programmer-03022012.html
 [regex]: http://tafzal.blogspot.nl/2010/07/absolute-bare-minimum-every-programmer.html
 [full-stack]: https://www.facebook.com/note.php?note_id=461505383919
