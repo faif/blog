@@ -14,7 +14,7 @@ If you are dealing a lot with the terminal you probably use the `cd` command ver
 * Makes you more productive
 * Helps you avoid <abbr title="Repetitive Strain Injury">RSI</abbr> problems, such as the infamous <abbr title="Carpal Tunnel Syndrome">CTS</abbr>
 
-The first tool that I want to show you is [autojump](https://github.com/wting/autojump). Once installed, autojump(abbrievated by the command `j`) maintains its own database to help you navigate to a directory without the need to remember:
+The first tool that I want to show you is [autojump](https://github.com/wting/autojump). Once installed, autojump (abbrievated by the command `j`) maintains its own database to help you navigate to a directory without the need to remember:
 * Where the directory actually is
 * The full name of the directory (partial names will do)
 
