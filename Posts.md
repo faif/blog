@@ -106,7 +106,7 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 [blink]: http://www.montulli.org/theoriginofthe%3Cblink%3Etag
 [ping]: http://ftp.arl.mil/mike/ping.html
 [early]: http://www.neatorama.com/2008/01/25/the-wonderful-world-of-early-computing/
-[unixcmd: http://www.unixguide.net/unix/faq/1.3.shtml
+[unixcmd]: http://www.unixguide.net/unix/faq/1.3.shtml
 [dos]: http://blogs.msdn.com/b/larryosterman/archive/2005/06/24/432386.aspx
 
 ***
