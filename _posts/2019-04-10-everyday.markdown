@@ -1,0 +1,35 @@
+---
+layout: post
+title: 'Everyday command line: Quoting, splitting, and removing newlines'
+date:   2019-04-10 13:00:00 +0200
+author: Sakis Kasampalis
+tags:
+- command line
+- bash
+---
+
+Welcome to the new (infinite) series "Everyday command line", in which I'll cover use cases where the command line still shines compared to your favorite file manager, IDE, editor, and the like :)
+
+At times, I receive emails with lists of items that need to be modified using code. Let's assume that a colleague sends us a list of 200 object IDs. I'll include only 5 here for brevity:
+
+| 29045  |
+| 14874  |
+| 33457  |
+| 21094  |
+| 36842  |
+| ...    |
+
+
+We want to use those IDs in Python code, specifically as items of a Python list. That means that they need to be quoted, separated by commas. Although not necessary, it's also nice to remove the newlines for compactness:
+
+"29045", "14874", ...
+
+Although we don't have to, it's convenient to first create a temporary file with the IDs. Assuming that we have copied the ID list to the clipboard, we can store it to a file:
+
+<script id="asciicast-QtK1vFyUO2Qoe9xF9eN0PjbWX" src="https://asciinema.org/a/QtK1vFyUO2Qoe9xF9eN0PjbWX.js"></script>
+
+Now that we have the values in a file we can filter them. There are many different ways of achieving this. Here, I'm using the (very powerful) awk programming language to achieve everything in a single step:
+
+<script id="asciicast-SKbG4zndUkhDiKYUNpACKNtcI" src="https://asciinema.org/a/SKbG4zndUkhDiKYUNpACKNtcI.js" async></script>
+
+So there we have it. If we omit the extra comma at the end, we can copy-paste the output to our Python list and use it as is.

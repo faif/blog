@@ -86,6 +86,7 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 * [Alan Mathison Turing][turing]
 * [Gary Kildall][kildall]
 * [How I came to find Linux][linux]
+* [How Lisp Became God's Own Programming Language][lispgod]
 * [My Lisp Experiences and the Development of GNU Emacs][emacs]
 * [Project MAC, the Internet, and Interactive Computing][mac]
 * [The idea of Lisp][idea]
@@ -99,6 +100,7 @@ Here you can find my favorite blog posts, magazine articles, etc. I'll try to ke
 [turing]: http://pragprog.com/magazines/2010-06/when-did-that-happen
 [kildall]: http://pragprog.com/magazines/2012-11/threads
 [linux]: http://ianmurdock.com/post/how-i-came-to-find-linux/
+[lispgod]: https://twobithistory.org/2018/10/14/lisp.html
 [emacs]: http://www.gnu.org/gnu/rms-lisp.html
 [idea]: https://dev.to/ericnormand/the-idea-of-lisp
 [mac]: http://pragprog.com/magazines/2010-07/when-did-that-happen
