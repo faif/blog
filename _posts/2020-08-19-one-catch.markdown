@@ -1,0 +1,39 @@
+---
+layout: post
+title: 'One catch to rule them all'
+date:   2020-08-19 20:00:00 +0200
+author: Sakis Kasampalis
+tags:
+- programming
+- c++
+- exception handling
+---
+
+When writing code, we need to handle errors. What happens if you are trying to read a corrupt file? Or if the network goes down while receiving data? The programming language runtime will try to
+give you an error message that makes sense, but that doesn't mean that this is what you want to show to your application/API users.
+
+There are two traditional ways of doing error handling. One is using error codes. That means returning a code (usually a number) to the users when something goes wrong, and let them interpret 
+that number using a lookup table. In languages that support exceptions, the recommended way is using exception handling.
+
+C++ has a well-defined exception hierarchy. But the default exception types are very generic, and in most cases we should create our own custom types. Throwing custom exceptions gives more accurate
+info about what went wrong to the client code, so that it can react accordingly (when possible). It is better to throw a `CorruptFileError` or a `ConnectionDroppedError` than an `std::runtime_error`. When the client code sees that a `ConnectionDroppedError` occcured, a simple retry after a few seconds might be enough.
+
+Custom exception types should extend the default types. That lets the client code be generic by default, and specific when needed. If a `CorruptFileError` doesn't extend `std::exception` (or any
+relevant `std::exception` subclass), the following `try catch` block is useless.
+
+<script src="https://gist.github.com/faif/ba36bd5e84939c2ece4936b6e9cbb1be.js?file=corrupt_file_example.cpp"></script>
+
+A nice property of exceptions is that we can use many `catch` blocks to cover a whole hierarchy of exceptions and react accordingly. In that case, we should always start from the most specific
+exception type(s) and move on to the more generic.
+
+<script src="https://gist.github.com/faif/ba36bd5e84939c2ece4936b6e9cbb1be.js?file=exception_hierarchy.cpp"></script>
+
+That's nice, but if we have to copy this code block to all functions we end up with a lot of redundancy. Is there a better way? 
+
+Actually, there is. Notice the `...` block. I still remember the university programming professor telling us that if you reach that block, something catastrophic has happened and the only thing 
+that you can do is to show a generic error message and abort. That was true then, but things have changed. Thanks to C++11, we can actually use only a single `...` block, get the actual 
+exception details using something called the exception pointer, and call a function that handles all known exception types to do the real work.
+
+<script src="https://gist.github.com/faif/ba36bd5e84939c2ece4936b6e9cbb1be.js?file=one_catch.cpp"></script>
+
+Much better. Now, if only C++ had something similar to [Python's decorators](https://medium.com/swlh/handling-exceptions-in-python-a-cleaner-way-using-decorators-fae22aa0abec), we wouldn't need to pollute our functions with `try catch` blocks. Perhaps there is something and I missed it, or there will be in a future C++ version :)
