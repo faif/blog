@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Let's plant some UML"
+date:   2021-09-11 13:00:00 +0200
+author: Sakis Kasampalis
+tags:
+- programming
+- notation
+- uml
+- design
+---
+
+![UML class diagram](/assets/uml.png) 
+
+Are you using UML? The Unified Modeling language is a very useful notation, especially when it comes to explaining the structure and behavior of object-oriented systems. It is language-independent and offers a wide range of models/diagrams that cover the different aspects (static, dynamic, threading, etc.) of a system.
+
+I like UML but I was never happy with the tooling around it. My biggest objection is that most of the UML tools use binary formats for storing the models, which makes version-controlling and collaborating for creating them impossible. That is against the nature of modern software development, which should be incremental and based on a team effort. Another thing that I don't like is spending time on the layout of those models (e.g. rearranging boxes because they are not readable). I'd rather have the tool take care of this automatically, and only if I'm picky about something, e.g. the position of a specific box, to do it myself.
+
+Good news. There is at least one tool that got this right: [PlantUML](https://plantuml.com). PlantUML offers a textual notation for creating UML models. That means that we can store our models as plain text files and version-control them. So when multiple members of a team make modifications to the same model, merging the changes is similar to merging source code changes. All diff tools work fine. PlantUML also does its best to ensure that all parts of a model are readable, using an automatic placement algorithm. It has also some other nice features, like being able to change the look and feel of the displayed components. What I find really important is that we can do everything on the Web. Although there are native applications that we can install, using the official (or any other unofficial) PlantUML Web Server we can render our models in different formats (e.g. PNG or the more scalable SVG) with minimal effort.
+
+Here's an example of a sequence diagram, and how it is rendered by default as a PNG file:
+
+<script src="https://gist.github.com/faif/fc541deea2bf29f13e97d21234a279a2.js"></script>
+
+![UML sequence diagram](/assets/uml-sequence.png)
+
