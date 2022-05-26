@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Making S3 buckets public is not the solution"
+date:   2022-05-26 19:00:00 +0200
+author: Sakis Kasampalis
+tags:
+- s3
+- aw
+- iam
+- access
+- policy
+---
+
+After doing an IAM cleanup and creating user groups to limit user permissions, our data scientists at work reported a problem. They are using Athena and boto3 to access S3 buckets programmatically, and that stopped working. They started seeing the following error message instead:
+
+{% highlight bash %}
+An error occurred (AccessDeniedException) when calling the StartQueryExecution operation...
+{% endhighlight %}
+
+While looking for solutions, I was disappointed to see that almost all of them suggested modifying the bucket's policy. Adding a custom S3 bucket policy means disabling the "Block all public access" default setting. Blocking all public access on S3 is a great practice. That's what AWS recommends and we should not change it unless there's a very serious reason to do so.
+
+So, after rejecting these suggestions I checked a bit more carefully our IAM user group policies and found that Force_MFA was attached to our data science group. Although forcing MFA is a very good practice when it comes to individual user accounts, it can cause problems when attached to a user group. The policy documentation says that:
+
+"This policy allows users to manage their own passwords and MFA devices but nothing else unless they authenticate with MFA."
+
+Well, when accessing an S3 bucket programmatically, you are not expected to use an MFA device. Thus, removing the Force_MFA policy from the user group fixed the issue.
