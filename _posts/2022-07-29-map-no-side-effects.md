@@ -10,7 +10,7 @@ tags:
 - side effect
 ---
 
-When we want to write code that operates on a data structure, it is common to initially implement it for a single item, and then make it more general. In functional languages like Clojure I use the following pattern a lot to execute a function on all items of a data structure (aka collection):
+When we want to write code that operates on a data structure, it is common to initially implement it for a single item, and then make it more general. In functional languages like Clojure, I use the following pattern a lot, to execute a function on all items of a data structure (aka collection):
 
 {% highlight clojure %}
 (defn single-item-function [item]
